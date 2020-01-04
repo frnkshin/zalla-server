@@ -16,6 +16,9 @@ app.use('/', router);
 app.listen(config.port, () => console.log(`LISTENING ON PORT ${config.port}`));
 
 // connect to mongoose && test connection
+console.log(`MONGO DB ROUTE: ${config.route}`);
+console.log(`MONGO DB NAME: ${config.db}`);
+
 mongoose.connect(config.route, { dbName: config.db, useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.once('open', () => {}).on('error', console.error.bind(console, 'MongoDB connection error:'));
 
